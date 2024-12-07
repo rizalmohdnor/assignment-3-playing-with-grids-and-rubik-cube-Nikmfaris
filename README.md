@@ -2,9 +2,9 @@
 # Assignment 2: Play with a 2x2 Rubik Cube
 by 
 
-**NAME**:
+**NAME : Nik Muhammad Faris Firdaus Bin Norazman**
 
-**Matric ID**
+**Matric ID : 2213935** 
 
 ## Objective
 

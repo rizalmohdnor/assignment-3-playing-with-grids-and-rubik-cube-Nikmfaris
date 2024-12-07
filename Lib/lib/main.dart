@@ -47,10 +47,10 @@ class CubeState {
     faces[2] = [faces[1][2], faces[1][3], ...faces[2].sublist(2)];
     faces[3] = [faces[2][2], faces[2][3], ...faces[3].sublist(2)];
   }
-  
-  // Rotate top face to the left, modify if necessary
+
+  // Rotate bottom face to the left, modify if necessary
   void rotateBottom() {
-    //Need to implement your code here
+    // Implement your code here
   }
 }
 
@@ -88,7 +88,6 @@ class _CubeScreenState extends State<CubeScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('2x2 Rubik\'s Cube'),
-        // instead of using an icon button here, create atleast 2 buttons to rotate the faces, rotate left face, or rotate right face, or implement all rotations.
         actions: [
           IconButton(
             icon: const Icon(Icons.rotate_left),
@@ -126,10 +125,15 @@ class _CubeScreenState extends State<CubeScreen> {
                   ],
                 ),
                 // Front face
-                SizedBox(
-                  height: 100,
-                  width: 100,
-                  child: buildFace(cube.faces[0]),
+                Column(
+                  children: [
+                    const Text('Front'),
+                    SizedBox(
+                      height: 100,
+                      width: 100,
+                      child: buildFace(cube.faces[0]),
+                    ),
+                  ],
                 ),
                 // Right face
                 Column(
@@ -144,8 +148,25 @@ class _CubeScreenState extends State<CubeScreen> {
                 ),
               ],
             ),
-            // Bottom face , implement your bottom face
-            // Rear face, implement your rear face
+            // Bottom face
+            Column(
+              children: [
+                const Text('Bottom'),
+                SizedBox(
+                  height: 100,
+                  width: 100,
+                  child: buildFace(cube.faces[5]),
+                ),
+              ],
+            ),
+            // Rear face
+            Column(
+              children: [
+                const Text('Back'),
+                SizedBox(
+                  height: 100,
+                  width: 100,
+                  child: buildFace(cube.faces[3]),
                 ),
               ],
             ),
